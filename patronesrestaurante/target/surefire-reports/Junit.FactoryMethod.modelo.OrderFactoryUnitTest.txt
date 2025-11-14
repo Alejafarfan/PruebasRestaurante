@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Junit.FactoryMethod.modelo.OrderFactoryUnitTest
+-------------------------------------------------------------------------------
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.358 s -- in Junit.FactoryMethod.modelo.OrderFactoryUnitTest
