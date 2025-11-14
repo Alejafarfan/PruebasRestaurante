@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd" version="3.0.2" name="e2e.ConsoleMainE2ETest" time="0.358" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante\target\test-classes;C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante\target\patrones-restaurante-1.0.0.jar;C:\Users\farfa\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.2\junit-jupiter-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.2\junit-jupiter-api-5.11.2.jar;C:\Users\farfa\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\farfa\.m2\repository\org\junit\platform\junit-platform-commons\1.11.2\junit-platform-commons-1.11.2.jar;C:\Users\farfa\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.2\junit-jupiter-params-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.2\junit-jupiter-engine-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\platform\junit-platform-engine\1.11.2\junit-platform-engine-1.11.2.jar;C:\Users\farfa\.m2\repository\org\mockito\mockito-core\5.14.2\mockito-core-5.14.2.jar;C:\Users\farfa\.m2\repository\net\bytebuddy\byte-buddy\1.15.4\byte-buddy-1.15.4.jar;C:\Users\farfa\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.4\byte-buddy-agent-1.15.4.jar;C:\Users\farfa\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\farfa\.m2\repository\org\mockito\mockito-junit-jupiter\5.14.2\mockito-junit-jupiter-5.14.2.jar;C:\Users\farfa\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\farfa\.m2\repository\tr\com\tokenpay\tokenpay\0.0.4\tokenpay-0.0.4.jar;C:\Users\farfa\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\farfa\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Bogota"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CO"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\farfa\AppData\Local\Temp\surefire6146353297065985624\surefirebooter-20251114121849510_3.jar C:\Users\farfa\AppData\Local\Temp\surefire6146353297065985624 2025-11-14T12-18-49_351-jvmRun1 surefire-20251114121849510_1tmp surefire_0-20251114121849510_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante\target\test-classes;C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante\target\patrones-restaurante-1.0.0.jar;C:\Users\farfa\.m2\repository\org\projectlombok\lombok\1.18.34\lombok-1.18.34.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter\5.11.2\junit-jupiter-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.2\junit-jupiter-api-5.11.2.jar;C:\Users\farfa\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\farfa\.m2\repository\org\junit\platform\junit-platform-commons\1.11.2\junit-platform-commons-1.11.2.jar;C:\Users\farfa\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.2\junit-jupiter-params-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.11.2\junit-jupiter-engine-5.11.2.jar;C:\Users\farfa\.m2\repository\org\junit\platform\junit-platform-engine\1.11.2\junit-platform-engine-1.11.2.jar;C:\Users\farfa\.m2\repository\org\mockito\mockito-core\5.14.2\mockito-core-5.14.2.jar;C:\Users\farfa\.m2\repository\net\bytebuddy\byte-buddy\1.15.4\byte-buddy-1.15.4.jar;C:\Users\farfa\.m2\repository\net\bytebuddy\byte-buddy-agent\1.15.4\byte-buddy-agent-1.15.4.jar;C:\Users\farfa\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\farfa\.m2\repository\org\mockito\mockito-junit-jupiter\5.14.2\mockito-junit-jupiter-5.14.2.jar;C:\Users\farfa\.m2\repository\org\assertj\assertj-core\3.26.3\assertj-core-3.26.3.jar;C:\Users\farfa\.m2\repository\tr\com\tokenpay\tokenpay\0.0.4\tokenpay-0.0.4.jar;C:\Users\farfa\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;C:\Users\farfa\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\farfa"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\farfa\AppData\Local\Temp\surefire6146353297065985624\surefirebooter-20251114121849510_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.6+8-LTS-188"/>
+    <property name="user.name" value="farfa"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\farfa\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\farfa\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.6"/>
+    <property name="user.dir" value="C:\Users\farfa\OneDrive\Escritorio\PATRONES RESTAURANTE\patronesrestaurante"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;c:\Users\farfa\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\copilotCli;c:\Users\farfa\AppData\Roaming\Code\User\globalStorage\github.copilot-chat\debugCommand;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\workspace\apache-maven-3.9.11\bin;C:\Program Files\Git\cmd;C:\Users\farfa\AppData\Local\Microsoft\WindowsApps;C:\Users\farfa\AppData\Local\Programs\Microsoft VS Code\bin;c:\Users\farfa\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.6+8-LTS-188"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="commandConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.019">
+    <system-out><![CDATA[
+=== SISTEMA DE COMANDOS DE PEDIDOS ===
+1. Registrar pedido
+2. Cancelar pedido
+3. Procesar pago
+4. Ver estado del sistema
+5. Salir
+Opción: Cierre del sistema de comandos.
+]]></system-out>
+  </testcase>
+  <testcase name="proxyConsoleAndChainConsoleShouldRun" classname="e2e.ConsoleMainE2ETest" time="0.221">
+    <system-out><![CDATA[=== PATRÓN PROXY - SISTEMA DE PEDIDOS===
+La cliente Lucía solicita el plato: Bandeja paisa
+la Mesera Laura pasa la orden a la cocina.
+El chef Pedro está preparando la orden Bandeja paisa (especialidad: Comida típica)
+El chef avisa que la orden de Bandeja paisa está lista.
+la Mesera Laura entrega el plato: Bandeja paisa
+=== PATRÓN CHAIN OF RESPONSIBILITY - SISTEMA DE PEDIDOS ===
+
+Cliente Carlos hace una solicitud: ORDER -> Una bandeja paisa
+Mesero Laura (zona Zona A) toma la orden: Una bandeja paisa
+
+Cliente Carlos hace una solicitud: COOK -> Preparar la bandeja paisa
+Mesero Laura no puede manejar 'cook', pasa al siguiente...
+Chef Andrés (especialidad: Comida típica) prepara: Preparar la bandeja paisa
+
+Cliente Carlos hace una solicitud: ADMIN -> Registrar queja del cliente
+Mesero Laura no puede manejar 'admin', pasa al siguiente...
+Chef Andrés no puede manejar 'admin', pasa al siguiente...
+Administrador Lucía (turno: Tarde) maneja solicitud: Registrar queja del cliente
+]]></system-out>
+  </testcase>
+  <testcase name="adapterConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.006">
+    <system-out><![CDATA[=== PATRÓN ADAPTER - SISTEMA DE PAGOS ===
+
+--- MENÚ PRINCIPAL ---
+1. Realizar pago
+2. Ver historial de pagos
+3. Simular múltiples pagos (automático)
+4. Salir
+Seleccione una opción: Saliendo del sistema de pagos...
+]]></system-out>
+  </testcase>
+  <testcase name="builderConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.005">
+    <system-out><![CDATA[
+=== SISTEMA DE COCINA (Builder) ===
+1. Menú del día
+2. Menú vegetariano
+3. Menú gourmet
+4. Salir
+Opción: Cierre del sistema de cocina.
+]]></system-out>
+  </testcase>
+  <testcase name="factoryConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.036">
+    <system-out><![CDATA[
+=== Sistema de Pedidos (Factory Method) ===
+1. Pedido en mesa
+2. Pedido a domicilio
+3. Pedido para llevar
+4. Salir
+Seleccione una opción: Saliendo del sistema de pedidos...
+]]></system-out>
+  </testcase>
+  <testcase name="observerConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.014">
+    <system-out><![CDATA[=== SISTEMA DE NOTIFICACIONES DE PEDIDOS (Observer) ===
+
+Estado actual: Nuevo
+1. Marcar como 'En preparación'
+2. Marcar como 'Listo'
+3. Marcar como 'Entregado'
+4. Salir
+Opción: Saliendo del sistema Observer...
+]]></system-out>
+  </testcase>
+  <testcase name="inventoryConsoleShouldExitQuickly" classname="e2e.ConsoleMainE2ETest" time="0.011">
+    <system-out><![CDATA[
+=== SISTEMA DE INVENTARIO (Singleton sin Map) ===
+1. Ver inventario
+2. Agregar producto
+3. Retirar producto (cocina)
+4. Salir
+Opción: Saliendo del sistema...
+]]></system-out>
+  </testcase>
+  <testcase name="stateConsoleShouldRunAndExit" classname="e2e.ConsoleMainE2ETest" time="0.03">
+    <system-out><![CDATA[=== SISTEMA DE ESTADOS DE PEDIDOS (State) ===
+
+Ingrese el ID del pedido: Ingrese la descripción del pedido: 
+Pedido creado: Pedido #1 [TestDesc] - Estado: Nuevo
+
+Presione ENTER para avanzar al siguiente estado...
+Pedido #1 [TestDesc] - Estado: Preparando
+
+Presione ENTER para avanzar al siguiente estado...
+Pedido #1 [TestDesc] - Estado: Listo para servir
+
+Presione ENTER para avanzar al siguiente estado...
+Pedido #1 [TestDesc] - Estado: Entregado
+
+Presione ENTER para avanzar al siguiente estado...
+Pedido #1 [TestDesc] - Estado: Cerrado
+El pedido ha sido cerrado correctamente.
+
+¿Desea gestionar otro pedido? (si/no): 
+Saliendo del sistema de estados...
+]]></system-out>
+  </testcase>
+</testsuite>

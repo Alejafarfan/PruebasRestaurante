@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FactoryConsole.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Patrones Restaurante</a> &gt; <a href="index.source.html" class="el_package">Creacionales.FactoryMethod.vista</a> &gt; <span class="el_source">FactoryConsole.java</span></div><h1>FactoryConsole.java</h1><pre class="source lang-java linenums">package Creacionales.FactoryMethod.vista;
+
+import Creacionales.FactoryMethod.controlador.OrderFactoryController;
+import Creacionales.FactoryMethod.modelo.*;
+
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+<span class="nc" id="L11">public class FactoryConsole {</span>
+
+    public static void main(String[] args) {
+<span class="pc" id="L14">        KitchenService kitchen = order -&gt; System.out.println(&quot;Preparando pedido de: &quot; + order.getName());</span>
+
+<span class="fc" id="L16">        try (Scanner sc = new Scanner(System.in)) {</span>
+<span class="fc" id="L17">            boolean salir = false;</span>
+<span class="fc" id="L18">            NumberFormat currency = NumberFormat.getCurrencyInstance(new Locale(&quot;es&quot;, &quot;ES&quot;));</span>
+
+<span class="fc bfc" id="L20" title="All 2 branches covered.">            while (!salir) {</span>
+<span class="fc" id="L21">                mostrarMenu();</span>
+<span class="fc" id="L22">                int opcion = leerOpcion(sc);</span>
+
+<span class="pc bpc" id="L24" title="2 of 3 branches missed.">                switch (opcion) {</span>
+                    case 1, 2, 3 -&gt; {
+<span class="nc" id="L26">                        OrderCreator creator = crearOrderCreator(sc, opcion, kitchen);</span>
+<span class="nc bnc" id="L27" title="All 2 branches missed.">                        if (creator == null) {</span>
+                            // Si por alguna razón no se creó el creador, volvemos al menú.
+<span class="nc" id="L29">                            break;</span>
+                        }
+
+<span class="nc" id="L32">                        OrderFactoryController controller = new OrderFactoryController(creator);</span>
+<span class="nc" id="L33">                        String cliente = pedirTexto(sc, &quot;Ingrese el nombre del cliente: &quot;);</span>
+
+                        try {
+<span class="nc" id="L36">                            Order order = controller.placeOrder(cliente);</span>
+<span class="nc" id="L37">                            order.deliver();</span>
+
+<span class="nc" id="L39">                            System.out.println(&quot;\nOrden creada exitosamente:&quot;);</span>
+<span class="nc" id="L40">                            System.out.println(order);</span>
+<span class="nc" id="L41">                            System.out.println(&quot;Items: &quot; + order.getItems());</span>
+
+                            // Formatear el total si el precio es un número
+                            try {
+<span class="nc" id="L45">                                double precio = order.getPrice();</span>
+<span class="nc" id="L46">                                System.out.println(&quot;Total: &quot; + currency.format(precio));</span>
+<span class="nc" id="L47">                            } catch (Exception fe) {</span>
+                                // Si getPrice() no retorna un double o lanza error, mostrar raw
+<span class="nc" id="L49">                                System.out.println(&quot;Total: $&quot; + order.getPrice());</span>
+<span class="nc" id="L50">                            }</span>
+<span class="nc" id="L51">                        } catch (Exception e) {</span>
+<span class="nc" id="L52">                            System.out.println(&quot;Error al crear la orden: &quot; + e.getMessage());</span>
+<span class="nc" id="L53">                        }</span>
+
+<span class="nc" id="L55">                        pausar(sc);</span>
+<span class="nc" id="L56">                    }</span>
+                    case 4 -&gt; {
+<span class="fc" id="L58">                        salir = true;</span>
+<span class="fc" id="L59">                        System.out.println(&quot;Saliendo del sistema de pedidos...&quot;);</span>
+<span class="fc" id="L60">                    }</span>
+                    default -&gt; {
+<span class="nc" id="L62">                        System.out.println(&quot;Opción inválida, intente nuevamente.&quot;);</span>
+                    }
+                }
+<span class="fc" id="L65">            }</span>
+<span class="nc" id="L66">        } catch (Exception e) {</span>
+<span class="nc" id="L67">            System.out.println(&quot;Error inesperado: &quot; + e.getMessage());</span>
+<span class="nc" id="L68">            e.printStackTrace();</span>
+<span class="fc" id="L69">        }</span>
+<span class="fc" id="L70">    }</span>
+
+    private static void mostrarMenu() {
+<span class="fc" id="L73">        System.out.println(&quot;\n=== Sistema de Pedidos (Factory Method) ===&quot;);</span>
+<span class="fc" id="L74">        System.out.println(&quot;1. Pedido en mesa&quot;);</span>
+<span class="fc" id="L75">        System.out.println(&quot;2. Pedido a domicilio&quot;);</span>
+<span class="fc" id="L76">        System.out.println(&quot;3. Pedido para llevar&quot;);</span>
+<span class="fc" id="L77">        System.out.println(&quot;4. Salir&quot;);</span>
+<span class="fc" id="L78">        System.out.print(&quot;Seleccione una opción: &quot;);</span>
+<span class="fc" id="L79">    }</span>
+
+    private static int leerOpcion(Scanner sc) {
+<span class="fc" id="L82">        String input = sc.nextLine().trim();</span>
+        try {
+<span class="fc" id="L84">            return Integer.parseInt(input);</span>
+<span class="nc" id="L85">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L86">            return -1; // opción inválida</span>
+        }
+    }
+
+    private static OrderCreator crearOrderCreator(Scanner sc, int opcion, KitchenService kitchen) {
+<span class="nc bnc" id="L91" title="All 4 branches missed.">        switch (opcion) {</span>
+            case 1:
+<span class="nc" id="L93">                return new DineInOrderCreator(kitchen);</span>
+            case 2: {
+<span class="nc" id="L95">                String direccion = pedirTexto(sc, &quot;Ingrese dirección de entrega: &quot;);</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">                if (direccion.isBlank()) {</span>
+<span class="nc" id="L97">                    System.out.println(&quot;La dirección no puede estar vacía. Volviendo al menú.&quot;);</span>
+<span class="nc" id="L98">                    return null;</span>
+                }
+<span class="nc" id="L100">                return new DeliveryOrderCreator(kitchen, direccion);</span>
+            }
+            case 3: {
+<span class="nc" id="L103">                String codigo = pedirTexto(sc, &quot;Ingrese código de retiro: &quot;);</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">                if (codigo.isBlank()) {</span>
+<span class="nc" id="L105">                    System.out.println(&quot;El código de retiro no puede estar vacío. Volviendo al menú.&quot;);</span>
+<span class="nc" id="L106">                    return null;</span>
+                }
+<span class="nc" id="L108">                return new TakeAwayOrderCreator(kitchen, codigo);</span>
+            }
+            default:
+<span class="nc" id="L111">                return null;</span>
+        }
+    }
+
+    private static String pedirTexto(Scanner sc, String prompt) {
+<span class="nc" id="L116">        System.out.print(prompt);</span>
+<span class="nc" id="L117">        return sc.nextLine().trim();</span>
+    }
+
+    private static void pausar(Scanner sc) {
+<span class="nc" id="L121">        System.out.println(&quot;\nPresione ENTER para volver al menú...&quot;);</span>
+<span class="nc" id="L122">        sc.nextLine();</span>
+<span class="nc" id="L123">    }</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
